@@ -36,7 +36,7 @@ namespace Front.Controllers
             //var ss = response.Result;
             //var ww = Task.Run(async () => await ss.Content.ReadAsStringAsync());
             //var kk = ww.Result;
-            ViewData["Test"] = await testService.TestWebApi(HttpContext);
+            ViewData["Test"] = await testService.TestWebApi(HttpContext,"identity");
             return View();
 
         }

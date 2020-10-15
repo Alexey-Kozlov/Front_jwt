@@ -49,9 +49,6 @@ namespace Front
                 options.ResponseMode = "query";
                 options.Scope.Add("api");
                 options.SaveTokens = true;
-;
-                options.AuthenticationMethod = OpenIdConnectRedirectBehavior.FormPost;
-
             });
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();

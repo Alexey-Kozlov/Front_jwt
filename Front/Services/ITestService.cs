@@ -5,6 +5,6 @@ namespace Front.Services
 {
     public interface ITestService
     {
-        Task<string> TestWebApi(HttpContext context);
+        Task<string> TestWebApi(HttpContext context, string url);
     }
 }

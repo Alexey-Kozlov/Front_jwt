@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Front.Services
 {
-    public class TestService :ITestService
+    public class TestService : ITestService
     {
         private readonly ServiceUrlsSettings _serviceUrlsSettings;
         public TestService(IOptions<ServiceUrlsSettings> serviceUrlsSettings)
@@ -18,12 +18,16 @@ namespace Front.Services
             _serviceUrlsSettings = serviceUrlsSettings.Value;
         }
 
-        public async Task<string> TestWebApi(HttpContext context)
+        public async Task<string> TestWebApi(HttpContext context, string url)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.SetBearerToken(await context.GetTokenAsync("access_token"));
 
-            var response =  await httpClient.GetAsync($"{_serviceUrlsSettings.WebApiEndpoint}/identity");
+            var response =  await httpClient.GetAsync($"{_serviceUrlsSettings.WebApiEndpoint}/{url}");
+            if(response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+            {
+                return "Доступ запрещен";
+            }
             return await  response.Content.ReadAsStringAsync();
         }
     }
