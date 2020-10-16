@@ -6,38 +6,50 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using Front.Services;
+using IdentityModel;
+using System.Diagnostics.Eventing.Reader;
+using Microsoft.AspNetCore.Http;
+using System.Web;
 
 namespace Front.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ITestService testService;
-        public HomeController(ITestService _testService)
+        public HomeController()
         {
-            testService = _testService;
+
         }
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            HttpClient client = new HttpClient();
+            var response = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = "https://ws-pc-70:5001/connect/token",
+                GrantType = OidcConstants.GrantTypes.AuthorizationCode,
+                Scope = "api",
+                ClientAssertion = new ClientAssertion
+                {
+                    Type = OidcConstants.ClientAssertionTypes.JwtBearer,
+                    Value = TokenGenerator.CreateClientAuthJwt()
+                }
+            });
+            ViewData["Test"] = response.AccessToken;
+            HttpContext.Session.SetString("token", response.AccessToken);
             return View();
         }
 
-
-        [HttpGet]
-        public async Task<IActionResult> Service()
+        [HttpGet("test")]
+        public async Task<IActionResult> Index2()
         {
 
-            //HttpClient httpClient2 = new HttpClient();
-            //var dd = User.Identity;
-            //var ss1 =  HttpContext.GetTokenAsync("access_token");
-            //httpClient2.SetBearerToken(ss1.Result);
+            HttpClient httpClient = new HttpClient();
+            httpClient.SetBearerToken(HttpContext.Session.GetString("token"));
 
-            //var response = Task.Run(async () => await httpClient2.GetAsync("https://ws-pc-70:5007/identity"));
-            //var ss = response.Result;
-            //var ww = Task.Run(async () => await ss.Content.ReadAsStringAsync());
-            //var kk = ww.Result;
-            ViewData["Test"] = await testService.TestWebApi(HttpContext,"identity");
-            return View();
+            var response2 = await httpClient.GetAsync($"https://ws-pc-70:5007/identity/test");
+
+            ViewData["Test"] = await response2.Content.ReadAsStringAsync();
+            return View("Index");
 
         }
 

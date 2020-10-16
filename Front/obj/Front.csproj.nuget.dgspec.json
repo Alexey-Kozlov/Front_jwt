@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\Front.csproj": {}
+    "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\Front.csproj": {
+    "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\Front.csproj",
+        "projectUniqueName": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front.csproj",
         "projectName": "Front",
-        "projectPath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\Front.csproj",
+        "projectPath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front.csproj",
         "packagesPath": "C:\\Users\\akozlov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\obj\\",
+        "outputPath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\akozlov\\AppData\\Roaming\\NuGet\\NuGet.Config",

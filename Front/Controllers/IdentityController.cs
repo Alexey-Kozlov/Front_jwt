@@ -11,11 +11,9 @@ namespace Front.Controllers
     [Route("[controller]")]
     public class IdentityController : Controller
     {
-        private readonly ITestService testService;
 
-        public IdentityController(ITestService _testService)
+        public IdentityController()
         {
-            testService = _testService;
         }
 
         [HttpPost]
@@ -24,18 +22,5 @@ namespace Front.Controllers
             return View();
         }
 
-        [HttpGet("User")]
-        public async Task<IActionResult> IndexUser()
-        {
-            ViewData["Test"] = await testService.TestWebApi(HttpContext, "identity/user");
-            return View("Service");
-        }
-
-        [HttpGet("Admin")]
-        public async Task<IActionResult> IndexAdmin()
-        {
-            ViewData["Test"] = await testService.TestWebApi(HttpContext, "identity/admin");
-            return View("Service");
-        }
     }
 }

@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "zSurgR07exnMbFXJKNnBUkE6KEjAEw9Wf2v6OFGwOUkHCJV814v//PsRpcC5CR8kKdt6yD1+adFEIfgQS/dquA==",
+  "dgSpecHash": "L7oXjqOEdQvVl/DVbHRsyggu9gBme44nVNk4pzaQA0rZFi5Qq5JiyllCYJhJe9JEhb/9Mf8o2H9pvTMCfbQtCQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front\\Front\\Front.csproj",
+  "projectFilePath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front_jwt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akozlov\\.nuget\\packages\\akdbhelpers\\1.0.1\\akdbhelpers.1.0.1.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\bootstrap\\4.5.2\\bootstrap.4.5.2.nupkg.sha512",
-    "C:\\Users\\akozlov\\.nuget\\packages\\identitymodel\\4.0.0\\identitymodel.4.0.0.nupkg.sha512",
-    "C:\\Users\\akozlov\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
-    "C:\\Users\\akozlov\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
+    "C:\\Users\\akozlov\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
-    "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.0.0\\microsoft.aspnetcore.authentication.jwtbearer.3.0.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\3.1.9\\microsoft.aspnetcore.authentication.openidconnect.3.1.9.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.5.0\\microsoft.identitymodel.jsonwebtokens.5.5.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.identitymodel.logging\\5.5.0\\microsoft.identitymodel.logging.5.5.0.nupkg.sha512",
@@ -30,7 +27,7 @@
     "C:\\Users\\akozlov\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\akozlov\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\akozlov\\.nuget\\packages\\system.text.encodings.web\\4.7.0\\system.text.encodings.web.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

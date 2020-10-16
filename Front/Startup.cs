@@ -8,6 +8,8 @@ using Front.Models;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Front.Repositories;
 using Front.Services;
+using IdentityModel;
+using System.Threading.Tasks;
 
 namespace Front
 {
@@ -22,36 +24,17 @@ namespace Front
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IConfiguration>(Configuration);
-            services.Configure<ServiceUrlsSettings>(Configuration.GetSection("ServiceUrls"));
-            services.AddScoped<ITestService, TestService>();
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = "Cookies";
-                options.DefaultChallengeScheme = "oidc";
-            })
-            .AddCookie(options =>
-            {
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-                options.Cookie.Name = "identity_server_mvc";
-            })
-            .AddOpenIdConnect("oidc", options =>
-            {
-                
-                options.SignInScheme = "Cookies";
-                options.Authority = Configuration.GetSection("ServiceUrls").GetSection("AuthorityApiEndpoint").Value;
-                options.ClientId = "Test";
-                options.ClientSecret = "Test";
-                options.ResponseType = "code";
-                options.GetClaimsFromUserInfoEndpoint = true;
-                options.UsePkce = true;
-                options.ResponseMode = "query";
-                options.Scope.Add("api");
-                options.SaveTokens = true;
-            });
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddAuthentication()
+                .AddOpenIdConnect(options =>
+                {
+                    options.Events.OnAuthorizationCodeReceived = context =>
+                    {
+                        context.TokenEndpointRequest.ClientAssertionType = OidcConstants.ClientAssertionTypes.JwtBearer;
+                        context.TokenEndpointRequest.ClientAssertion = TokenGenerator.CreateClientAuthJwt();
+                        return Task.CompletedTask;
+                    };
+                });
+            services.AddSession();
             services.AddControllersWithViews();
         }
 
@@ -63,15 +46,14 @@ namespace Front
             }                     
 
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}").RequireAuthorization();
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
             });
         }
