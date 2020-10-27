@@ -24,19 +24,19 @@ namespace Front
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseKestrel((context, serverOptions) =>
                     {
-                        serverOptions.Configure(context.Configuration.GetSection("Kestrel"))
-                        .Endpoint("HTTPS", listenOptions =>
-                        {
-                            listenOptions.HttpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12;
-                        });
+                        serverOptions.Configure(context.Configuration.GetSection("Kestrel"));
+                        //.Endpoint("HTTPS", listenOptions =>
+                        //{
+                        //    listenOptions.HttpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+                        //});
                     });
-                    webBuilder.ConfigureKestrel(options =>
-                    {
-                        options.ConfigureHttpsDefaults(listenOptions =>
-                        {
-                            listenOptions.ServerCertificate = CertificateLoader.LoadFromStoreCert("Ws-PC-70", "Root", StoreLocation.LocalMachine, false);
-                        });
-                    });
+                    //webBuilder.ConfigureKestrel(options =>
+                    //{
+                    //    options.ConfigureHttpsDefaults(listenOptions =>
+                    //    {
+                    //        listenOptions.ServerCertificate = CertificateLoader.LoadFromStoreCert("Ws-PC-70", "Root", StoreLocation.LocalMachine, false);
+                    //    });
+                    //});
                 });
     }
 }

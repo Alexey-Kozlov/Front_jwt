@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L7oXjqOEdQvVl/DVbHRsyggu9gBme44nVNk4pzaQA0rZFi5Qq5JiyllCYJhJe9JEhb/9Mf8o2H9pvTMCfbQtCQ==",
+  "dgSpecHash": "p6TnZyjdVsaOagX4WVhOFD9eH/NOKPCgjqPYJ5mv9lVyVNy0NTf+eMfkir+7CK2sp6BjjTbGMyu7PdyQNQnjqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\akozlov\\source\\repos\\TestAuthentication\\Front_jwt\\Front\\Front_jwt.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\5.5.0\\microsoft.identitymodel.protocols.openidconnect.5.5.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
     "C:\\Users\\akozlov\\.nuget\\packages\\popper.js\\1.16.1\\popper.js.1.16.1.nupkg.sha512",

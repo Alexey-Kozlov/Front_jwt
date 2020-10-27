@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Front.Services;
+using Front_jwt.Services;
 
-namespace Front.Controllers
+namespace Front_jwt.Controllers
 {
     [Route("[controller]")]
     public class IdentityController : Controller

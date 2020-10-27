@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Front.Models
+namespace Front_jwt.Models
 {
     public class ServiceUrlsSettings
     {
